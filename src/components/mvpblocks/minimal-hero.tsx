@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
 import RotatingText from '../RotatingText'
+import Link from 'next/link'
 
 const colors = {
   50: '#f8f7f5',
@@ -434,8 +435,12 @@ export default function Hero() {
               damping: 10,
               stiffness: 100,
             }}
-            className="bg-transparent text-sm px-4 py-2 cursor-pointer hover:bg-gold-500 uppercase hover:text-gold-50   rounded-none border  border-gold-500 mt-6 text-gold-300 hover:"
+            className="bg-transparent relative text-sm px-4 py-2 cursor-pointer hover:bg-gold-500 uppercase hover:text-gold-50   rounded-none border  border-gold-500 mt-6 text-gold-300 hover:"
           >
+            <Link
+              href={'#contact'}
+              className="absolute inset-0 z-10 left-0 top-0 w-full h-full"
+            />
             Book Your SLOT
           </motion.button>
           <div

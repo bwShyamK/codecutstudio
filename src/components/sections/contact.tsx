@@ -167,7 +167,7 @@ export default function Contact() {
                 </FormItem>
               )}
             />
-            <div className="grid grid-cols-2">
+            <div className="grid space-y-8 sm:grid-cols-2">
               {/* Service */}
               <FormField
                 control={form.control}

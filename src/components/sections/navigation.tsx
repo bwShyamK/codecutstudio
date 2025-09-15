@@ -20,10 +20,7 @@ export function Navigation() {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Work', href: '#work' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -38,7 +35,11 @@ export function Navigation() {
       <div className="max-w-7xl  mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center relative">
+            <Link
+              href={'/'}
+              className="absolute inset-0 w-full h-full z-10 left-0 top-0"
+            />
             <motion.img
               src={'/logo.svg'}
               height={64}
@@ -123,6 +124,10 @@ export function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block relative p-1">
+            <Link
+              href={'#contact'}
+              className="absolute inset-0 z-10 left-0 top-0 w-full h-full"
+            />
             <motion.button
               initial={{ y: -300, x: 40 }}
               animate={{
@@ -191,14 +196,14 @@ export function Navigation() {
               className="pt-4 relative"
               initial={{ opacity: 0 }}
               animate={{ opacity: isMobileMenuOpen ? 1 : 0 }}
-              transition={{ delay: 0.4, duration: 0.3 }}
+              transition={{ delay: 0, duration: 0.2 }}
             >
               <Link
                 href={'#contact'}
                 className="absolute inset-0 z-10 left-0 top-0 w-full h-full"
               />
               <Button
-                className="w-full bg-gradient-to-r from-lime-600 to-lime-600 hover:from-lime-500 hover:to-lime-500 text-white rounded-full font-semibold"
+                className="w-full bg-gold-400 text-white rounded-none font-semibold"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Work With Us

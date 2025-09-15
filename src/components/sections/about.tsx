@@ -31,7 +31,10 @@ const services = [
 
 export function AboutSection() {
   return (
-    <section className="relative w-full bg-black text-[#e6e1d7] py-24 px-8 md:px-16">
+    <section
+      id="about"
+      className="relative w-full bg-black text-[#e6e1d7] py-24 px-8 md:px-16"
+    >
       <div className="mx-auto max-w-6xl text-center">
         {/* Title */}
         <motion.h2
