@@ -40,7 +40,6 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = React.useState(false)
   const [isSubmitted, setIsSubmitted] = React.useState(false)
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -55,7 +54,6 @@ export default function Contact() {
   })
 
   const onSubmit = async (values: ContactFormValues) => {
-    setIsSubmitting(true)
     try {
       const response = await fetch('https://formspree.io/f/mleyzzgv', {
         method: 'POST',
@@ -74,8 +72,6 @@ export default function Contact() {
     } catch (err) {
       console.error(err)
       alert('Error submitting form.')
-    } finally {
-      setIsSubmitting(false)
     }
   }
 
@@ -87,7 +83,7 @@ export default function Contact() {
         animate={{ opacity: 1, y: 0 }}
       >
         <h2 className="text-3xl font-bold">Thank You 🎉</h2>
-        <p className="mt-2 text-gold-400">We'll get back to you shortly.</p>
+        <p className="mt-2 text-gold-400">{`We'll get back to you shortly.`}</p>
       </motion.div>
     )
   }
@@ -100,7 +96,7 @@ export default function Contact() {
         {/* Section Header */}
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight">
-            Let's Build Something Epic
+            {`Let's Build Something Epic`}
           </h2>
           <p className="text-sm md:text-base opacity-70">
             Fill out the form and our PRO BRO squad will get back to you.

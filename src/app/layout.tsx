@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Bangers, Asap } from 'next/font/google'
+import { Geist, Geist_Mono, Bangers } from 'next/font/google'
 import './globals.css'
 
 // Karantina

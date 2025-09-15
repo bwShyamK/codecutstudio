@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
 import RotatingText from '../RotatingText'
-import { Button } from '../ui/button'
 
 const colors = {
   50: '#f8f7f5',
